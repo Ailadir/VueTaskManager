@@ -1,39 +1,113 @@
-# VueTaskManager
+# Vue Task Manager
 
-This template should help get you started developing with Vue 3 in Vite.
+A modern task management application built with Vue 3, TypeScript, and Vuex. The app provides a clean interface for managing tasks with features like adding, completing, and filtering tasks, all while maintaining state persistence.
 
-## Recommended IDE Setup
+**Demo:** Coming soon (Vercel deployment)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Features
 
-## Type Support for `.vue` Imports in TS
+- Task management with create, read, update, and delete operations
+- Task status toggling (complete/incomplete)
+- Filter tasks by status (all, active, completed)
+- Persistent storage with API integration
+- TypeScript support for better development experience
+- Modern UI with Vue 3
+- State management with Vuex 4
+- Responsive and mobile-friendly design
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Technologies
 
-## Customize configuration
+- Vue 3
+- TypeScript
+- Vuex 4 for state management
+- Vite for build tooling
+- ESLint + Prettier for code quality
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Getting Started
 
-## Project Setup
+### 1. Clone the repository
 
-```sh
+```bash
+git clone https://github.com/Ailadir/VueTaskManager.git
+cd VueTaskManager
+```
+
+### 2. Install dependencies
+
+```bash
+yarn install
+# or
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 3. Run the development server
 
-```sh
+```bash
+yarn dev
+# or
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+Visit [http://localhost:5173](http://localhost:5173) to view the app.
 
-```sh
-npm run build
+### 4. Build and preview for production
+
+```bash
+yarn build && yarn preview
+# or
+npm run build && npm run preview
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## API Integration
 
-```sh
+The application uses a RESTful API for task management operations:
+- GET /tasks - Fetch all tasks
+- POST /tasks - Create a new task
+- PUT /tasks/:id - Update task status
+- DELETE /tasks/:id - Remove a task
+
+## Deployment
+
+- Easily deployable to [Vercel](https://vercel.com/) or any static hosting service.
+
+## Folder Structure
+
+```
+src/
+  api/            # API integration for tasks
+  components/     # Vue components
+  store/          # Vuex store configuration
+  views/          # Page components
+  types/          # TypeScript type definitions
+public/           # Static assets
+```
+
+## Code Quality
+
+```bash
+# Lint code
+yarn lint
+# or
 npm run lint
+
+# Format code
+yarn format
+# or
+npm run format
 ```
+
+## IDE Setup
+
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) is recommended for the best development experience.
+
+## TypeScript Support
+
+This project uses TypeScript for enhanced development experience. The project is configured to handle `.vue` files with TypeScript through `vue-tsc` for type checking. Make sure to use [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) in your editor for proper TypeScript support.
+
+## License
+
+MIT
+
+---
+
+**Repository:** [GitHub](https://github.com/Ailadir/VueTaskManager)
