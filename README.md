@@ -2,7 +2,7 @@
 
 A modern task management application built with Vue 3, TypeScript, and Vuex. The app provides a clean interface for managing tasks with features like adding, completing, and filtering tasks, all while maintaining state persistence.
 
-**Demo:** Coming soon (Vercel deployment)
+**Demo:** [Deployed on Vercel](https://vue-task-manager-5my5.vercel.app/)
 
 ## Features
 
@@ -106,4 +106,6 @@ This project uses TypeScript for enhanced development experience. The project is
 
 ---
 
-**Repository:** [GitHub](https://github.com/Ailadir/VueTaskManager)
+## Author
+
+[Araz Schwarz]
