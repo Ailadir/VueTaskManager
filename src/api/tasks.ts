@@ -2,8 +2,8 @@ import type { Task } from '../store';
 
 let tasks: Task[] = [
   { id: 1, title: 'Изучить Vue 3', completed: false },
-  { id: 2, title: 'Сделать тестовое задание', completed: false },
-  { id: 3, title: 'Порадоваться результату', completed: false },
+  { id: 2, title: 'Сделать тестовое задание', completed: true },
+  { id: 3, title: 'Порадоваться результату', completed: true },
 ];
 
 function timeout<T>(result: T, ms = 500): Promise<T> {
@@ -29,11 +29,11 @@ export function deleteTask(id: number): Promise<void> {
   return timeout(undefined);
 }
 
-export function toggleTask(id: number): Promise<Task | undefined> {
+export function updateTask(id: number): Promise<Task | undefined> {
   const task = tasks.find(t => t.id === id);
   if (task) {
     task.completed = !task.completed;
     return timeout(task);
   }
   return timeout(undefined);
-} 
+}

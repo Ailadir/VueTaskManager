@@ -24,14 +24,17 @@ function set(f: 'all' | 'active' | 'completed') {
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
+
 button {
   padding: 0.5rem 1rem;
   border: none;
+  border-radius: 6px;
   background: #eee;
   cursor: pointer;
 }
+
 button.active {
   background: #42b983;
   color: #fff;
 }
-</style> 
+</style>

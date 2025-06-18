@@ -1,4 +1,5 @@
 import { createStore } from 'vuex';
+import type { ActionContext } from 'vuex/types/index.js';
 
 export interface Task {
   id: number;
@@ -28,7 +29,7 @@ const mutations = {
   deleteTask(state: State, id: number) {
     state.tasks = state.tasks.filter(task => task.id !== id);
   },
-  toggleTask(state: State, id: number) {
+  updateTask(state: State, id: number) {
     const task = state.tasks.find(task => task.id === id);
     if (task) task.completed = !task.completed;
   },
@@ -38,24 +39,40 @@ const mutations = {
 };
 
 const actions = {
-  async fetchTasks({ commit }: any) {
-    const tasks = await import('../api/tasks').then(m => m.getTasks());
-    commit('setTasks', tasks);
+  async fetchTasks({ commit }: ActionContext<State, State>) {
+    try {
+      const tasks = await import('../api/tasks').then(m => m.getTasks());
+      commit('setTasks', tasks);
+    } catch (error) {
+      console.error('Ошибка при загрузке задач:', error);
+    }
   },
-  async addTask({ commit }: any, title: string) {
-    const task = await import('../api/tasks').then(m => m.addTask(title));
-    commit('addTask', task);
+  async addTask({ commit }: ActionContext<State, State>, title: string) {
+    try {
+      const task = await import('../api/tasks').then(m => m.addTask(title));
+      commit('addTask', task);
+    } catch (error) {
+      console.error('Ошибка при добавлении задачи:', error);
+    }
   },
-  async deleteTask({ commit }: any, id: number) {
-    await import('../api/tasks').then(m => m.deleteTask(id));
-    commit('deleteTask', id);
+  async deleteTask({ commit }: ActionContext<State, State>, id: number) {
+    try {
+      await import('../api/tasks').then(m => m.deleteTask(id));
+      commit('deleteTask', id);
+    } catch (error) {
+      console.error('Ошибка при удалении задачи:', error);
+    }
   },
-  async toggleTask({ commit }: any, id: number) {
-    await import('../api/tasks').then(m => m.toggleTask(id));
-    const tasks = await import('../api/tasks').then(m => m.getTasks());
-    commit('setTasks', tasks);
+  async updateTask({ commit }: ActionContext<State, State>, id: number) {
+    try {
+      await import('../api/tasks').then(m => m.updateTask(id));
+      const tasks = await import('../api/tasks').then(m => m.getTasks());
+      commit('setTasks', tasks);
+    } catch (error) {
+      console.error('Ошибка при переключении задачи:', error);
+    }
   },
-  setFilter({ commit }: any, filter: Filter) {
+  setFilter({ commit }: ActionContext<State, State>, filter: Filter) {
     commit('setFilter', filter);
   },
 };

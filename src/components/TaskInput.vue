@@ -25,11 +25,15 @@ function onSubmit() {
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
+
 input {
   flex: 1;
   padding: 0.5rem;
 }
+
 button {
   padding: 0.5rem 1rem;
+  border: 1px solid #808080;
+  border-radius: 6px;
 }
-</style> 
+</style>

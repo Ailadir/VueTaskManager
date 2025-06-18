@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import TaskInput from './componentsFormer/TaskInput.vue';
-import TaskFilters from './componentsFormer/TaskFilters.vue';
-import TaskList from './componentsFormer/TaskList.vue';
+import TaskInput from './components/TaskInput.vue';
+import TaskFilters from './components/TaskFilters.vue';
+import TaskList from './components/TaskList.vue';
 </script>
 
 <template>
