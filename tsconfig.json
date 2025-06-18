@@ -1,0 +1,21 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ],
+  "types": [
+    "vuex/types"
+  ],
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "types": [
+      "node"
+    ],
+    "allowJs": true,
+  }
+}
