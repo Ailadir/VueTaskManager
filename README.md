@@ -104,10 +104,6 @@ npm run format
 
 This project uses TypeScript for enhanced development experience. The project is configured to handle `.vue` files with TypeScript through `vue-tsc` for type checking. Make sure to use [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) in your editor for proper TypeScript support.
 
-## License
-
-MIT
-
 ---
 
 **Repository:** [GitHub](https://github.com/Ailadir/VueTaskManager)
